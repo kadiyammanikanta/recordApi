@@ -513,7 +513,7 @@ app.get('/manage-records', function (req, res) {
     const result={
         Ids: tempData.map(item=>item.id),
         Open:tempData.filter(item=>item.disposition === 'open'),
-        ClosedCount:tempData.filter(item=>item.disposition === 'close' && ['green','blue','red'].includes(item.color)).length,
+        ClosedCount:tempData.filter(item=>item.disposition === 'closed' && ['green','blue','red'].includes(item.color)).length,
         PreviousPage:pageId===1 ?null:pageId-1,
         NextPage:pageId===total ?null:parseInt(pageId)+1
     }
